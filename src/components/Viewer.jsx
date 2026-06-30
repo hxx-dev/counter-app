@@ -8,11 +8,12 @@ const ViewerContainer = styled.div`
   margin-bottom: 10px;
 `;
 
-function Viewer() {
+function Viewer({ count }) {
+  //상태값 부모한테 받음
   return (
     <ViewerContainer>
       <div>현재 카운트:</div>
-      <h1>0</h1>
+      <h1>{count}</h1>
     </ViewerContainer>
   );
 }
