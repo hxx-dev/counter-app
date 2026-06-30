@@ -8,15 +8,52 @@ const ControllerContainer = styled.div`
   margin-bottom: 10px;
 `;
 
-function Controller() {
+function Controller({ onClickBtn }) { //이벤트 핸들러 부모한테 받음
   return (
     <ControllerContainer>
-      <button>-1</button>
-      <button>-10</button>
-      <button>-100</button>
-      <button>+100</button>
-      <button>+10</button>
-      <button>+1</button>
+        {/* 콜백함수를 사용해서 매개변수값 이벤트 핸들러로 넘겨주기 */}
+      <button
+        onClick={() => {
+          onClickBtn(-1);
+        }}
+      >
+        -1
+      </button>
+      <button
+        onClick={() => {
+          onClickBtn(-10);
+        }}
+      >
+        -10
+      </button>
+      <button
+        onClick={() => {
+          onClickBtn(-100);
+        }}
+      >
+        -100
+      </button>
+      <button
+        onClick={() => {
+          onClickBtn(100);
+        }}
+      >
+        +100
+      </button>
+      <button
+        onClick={() => {
+          onClickBtn(10);
+        }}
+      >
+        +10
+      </button>
+      <button
+        onClick={() => {
+          onClickBtn(1);
+        }}
+      >
+        +1
+      </button>
     </ControllerContainer>
   );
 }
